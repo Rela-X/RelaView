@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ErrorLogWidget</class>
+ <widget class="QWidget" name="ErrorLogWidget">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>296</width>
+    <height>307</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Error Log</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QCheckBox" name="checkBox">
+     <property name="text">
+      <string>Don't open automatically</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QListWidget" name="listWidget">
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="clearButton">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Clear Log</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>clearButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ErrorLogWidget</receiver>
+   <slot>clearLog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>242</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>197</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>clearLog()</slot>
+ </slots>
+</ui>

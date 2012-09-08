@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>rfc</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>@ICON@</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>text/plain</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>RelaFix Code</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSIsAppleDefaultForType</key>
+			<true/>
+		</dict>
+	</array>
+	<key>CFBundleIconFile</key>
+	<string>@ICON@</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleGetInfoString</key>
+	<string>@EXECUTABLE@ Andreas Schmitz</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleExecutable</key>
+	<string>@EXECUTABLE@</string>
+	<key>CFBundleIdentifier</key>
+	<string>de.fnordlab.@EXECUTABLE@</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright (C) 2012 Andreas Schmitz.</string>
+</dict>
+</plist>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NewDomainDialog</class>
+ <widget class="QDialog" name="NewDomainDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>391</width>
+    <height>170</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>390</width>
+    <height>170</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>170</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>New Domain</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="5">
+    <widget class="QLineEdit" name="elementsEdit">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>a,b,c,d,e,f,...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="domainAlert">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QRadioButton" name="radioButtonText">
+     <property name="text">
+      <string>elements</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5">
+    <widget class="QSpinBox" name="spinBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="5">
+    <widget class="QLineEdit" name="domainEdit">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>choose a name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="5">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QLabel" name="domainLabel">
+     <property name="text">
+      <string>domain name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QRadioButton" name="radioButtonSpin">
+     <property name="text">
+      <string>number sequence</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="2" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="elementsAlert">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>domainEdit</tabstop>
+  <tabstop>radioButtonText</tabstop>
+  <tabstop>elementsEdit</tabstop>
+  <tabstop>radioButtonSpin</tabstop>
+  <tabstop>spinBox</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>NewDomainDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>160</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>NewDomainDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>322</x>
+     <y>160</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButtonText</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>elementsEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButtonSpin</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>93</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>109</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButtonText</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>109</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButtonSpin</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>elementsEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

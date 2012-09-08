@@ -1,0 +1,9 @@
+RelaView is an open-source cross-platform relation viewer developed by Andreas Schmitz in the context of his bachelor thesis in 2012. RelaView is published under the GNU Lesser General Public License Version 3 (LGPL). 
+
+RelaView dynamically links to unmodified Qt Library 4.8.2. The Qt Library is licensed under the LGPL 2.1 with Nokia Qt LGPL exception 1.1. You can obtain the Qt library from http://qt.nokia.com. 
+
+RelaView uses the RelaFix library developed by Peter Berger.
+
+RelaView Copyright (C) 2012 Andreas Schmitz.
+RelaFix Copyright (C) 2011-2012 Peter Berger.
+Qt Library Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies)

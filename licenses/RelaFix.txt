@@ -1,0 +1,2 @@
+RelaFix Copyright (C) 2011-2012 Peter Berger.
+Modified in 2012 by Andreas Schmitz.

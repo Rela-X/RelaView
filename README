@@ -1,0 +1,27 @@
+Instructions:
+To build RelaView from the sources you have to install the Qt SDK or the Qt Library. For more information: http://qt.nokia.com/
+RelaView dynamically links to an unmodified Qt Library
+
+Build:
+1) run "qmake" in the folder which includes the BuildAll.pro file
+2) run make
+
+In RelaView/build/release or RelaView/build/debug you can find the application
+
+Standard build mode: debug mode
+If you wish to build RelaView in release mode use:
+
+1) qmake -r "CONFIG-=debug" 
+2) make
+
+
+Mac OSX:
+If you are using osx qmake generates a xcode project file. It is recommended to generate a Makefile instead. Therefore add: 
+
+-spec macx-g++
+
+to qmake (e.g. qmake -r "CONFIG-=debug" -spec macx-g++).
+
+
+replace Dynamic Libs:
+If you want to replace the dynamic Qt libraries of an OSX App Bundle, you have to dive into the package: "RelaView.app/Contents/Frameworks/" and replace the packages. You can also delete all Qt* folders in the Framework folder and run macdeployqt (part of the Qt SDK) again, to replace the dynamic libs.
