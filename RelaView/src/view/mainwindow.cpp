@@ -49,6 +49,7 @@
 #include "domainchooserdialog.h"
 #include "sequenceconverter.h"
 #include "newdomaindialog.h"
+#include "swapdialog.h"
 
 #include <QAction>
 #include <QFileDialog>
@@ -82,7 +83,7 @@ MainWindow::MainWindow(QWidget *parent) :
     qDebug("MainWindow Constructor");
     ui->setupUi(this);
 
-    this->init();
+    this->initMainWindow();
     this->readSettings();
 }
 
@@ -578,8 +579,9 @@ void MainWindow::relationChanged()
         y = m_sequenceConverter->projectedY(ele->yCoord());
 
         ele->setToolTip(QString("(%1, %2)")
-                        .arg(this->m_relationData->domain2Element(x))
-                        .arg(this->m_relationData->domain1Element(y)));
+                        .arg(this->m_relationData->domain1Element(y))
+                        .arg(this->m_relationData->domain2Element(x)));
+
 
         int bit = m_relationData->tableBit(x, y);
         if (bit == 1)
@@ -717,6 +719,13 @@ void MainWindow::equivalentSort()
 }
 
 
+void MainWindow::swap()
+{
+    qDebug() << "MainWindow swap";
+    SwapDialog::swap(this);
+}
+
+
 void MainWindow::resetOrder()
 {
     this->m_sequenceConverter->resetSequence();
@@ -802,8 +811,8 @@ void MainWindow::elementHoverEnter(MatrixElement* ele)
     uint y = this->m_sequenceConverter->projectedY(ele->yCoord());
 
     ui->statusBar->showMessage(QString("Element:%1 %2")
-                               .arg(this->m_relationData->domain2Element(x))
-                               .arg(this->m_relationData->domain1Element(y)), 3000);
+                               .arg(this->m_relationData->domain1Element(y))
+                               .arg(this->m_relationData->domain2Element(x)), 3000);
 }
 
 
@@ -906,7 +915,7 @@ void MainWindow::on_actionShow_GLMatrix_triggered()
 //#---------------------------------------------------------------------------#
 //#------- PRIVATE -----------------------------------------------------------#
 //#---------------------------------------------------------------------------#
-void MainWindow::init()
+void MainWindow::initMainWindow()
 {
     this->initMembers();
     this->setupMenubar();
@@ -1123,8 +1132,8 @@ void MainWindow::drawRelation()
                                                    QBrush(elementColor));
             ele->setFlag(QGraphicsItem::ItemIgnoresParentOpacity); //into MatrixElement
             ele->setToolTip(QString("(%1, %2)")
-                            .arg(this->m_relationData->domain2Element(i))
-                            .arg(this->m_relationData->domain1Element(j)));
+                            .arg(this->m_relationData->domain1Element(j))
+                            .arg(this->m_relationData->domain2Element(i)));
 
 
             if (m_relationData->tableBit(i, j)){
@@ -1181,6 +1190,7 @@ void MainWindow::enableButtons()
     ui->actionMatrix_Zoom_In->setEnabled(true);
     ui->actionMatrix_Zoom_Out->setEnabled(true);
     ui->actionReset_Sorting->setEnabled(true);
+    ui->actionSwap->setEnabled(true);
 
     ui->actionFill->setEnabled(true);
 
