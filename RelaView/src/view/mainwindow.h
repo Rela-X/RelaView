@@ -111,6 +111,7 @@ private slots:
     void zoomOut();
     void fitToScreen();
     void equivalentSort();
+    void swap();
     void resetOrder();
     void drawerVisibilityChanged(bool isVisible);
     void elementMousePress(MatrixElement* ele);
@@ -127,7 +128,7 @@ signals:
 
 private:
     //Functions
-    void init();
+    void initMainWindow();
     void initMembers();
     void setupMenubar();
     void configure();
