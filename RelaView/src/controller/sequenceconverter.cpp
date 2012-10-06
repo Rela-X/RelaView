@@ -31,11 +31,11 @@
 //#---------------------------------------------------------------------------#
 //#------- CONSTRUCTOR / DESTRUCTOR ------------------------------------------#
 //#---------------------------------------------------------------------------#
-SequenceConverter::SequenceConverter(const uint width, const uint height, QObject *parent) :
+SequenceConverter::SequenceConverter(const int width, const int height, QObject *parent) :
     QObject(parent)
 {
-    this->m_columnSequence = new QVector<uint>(width);
-    this->m_rowSequence = new QVector<uint>(height);
+    this->m_columnSequence = new QVector<int>(width);
+    this->m_rowSequence = new QVector<int>(height);
 
     this->resetSequence();
 }
@@ -53,18 +53,18 @@ SequenceConverter::~SequenceConverter()
 //#---------------------------------------------------------------------------#
 //#------- PUBLIC ------------------------------------------------------------#
 //#---------------------------------------------------------------------------#
-const QVector<uint>& SequenceConverter::rowSequence() const
+const QVector<int>& SequenceConverter::rowSequence() const
 {
     return *this->m_rowSequence;
 }
 
-const QVector<uint>& SequenceConverter::columnSequence() const
+const QVector<int>& SequenceConverter::columnSequence() const
 {
     return *this->m_columnSequence;
 }
 
 
-uint SequenceConverter::projectedX(const uint x) const
+int SequenceConverter::projectedX(const int x) const
 {
     if (x >= this->m_columnSequence->size())
         return 0;
@@ -73,7 +73,7 @@ uint SequenceConverter::projectedX(const uint x) const
 }
 
 
-uint SequenceConverter::projectedY(const uint y) const
+int SequenceConverter::projectedY(const int y) const
 {
     if (y >= this->m_rowSequence->size())
         return 0;
@@ -82,7 +82,7 @@ uint SequenceConverter::projectedY(const uint y) const
 }
 
 
-void SequenceConverter::setRowSequence(const QVector<uint> &v)
+void SequenceConverter::setRowSequence(const QVector<int> &v)
 {
     if (this->m_rowSequence->size() != v.size())
         return;
@@ -98,7 +98,7 @@ void SequenceConverter::setRowSequence(const QVector<uint> &v)
 }
 
 
-void SequenceConverter::setColumnSequence(const QVector<uint> &v)
+void SequenceConverter::setColumnSequence(const QVector<int> &v)
 {
     if (this->m_columnSequence->size() != v.size())
         return;
@@ -114,13 +114,13 @@ void SequenceConverter::setColumnSequence(const QVector<uint> &v)
 }
 
 
-void SequenceConverter::switchRows(const uint row1, const uint row2)
+void SequenceConverter::switchRows(const int row1, const int row2)
 {
     if (row1 >= this->m_rowSequence->size()
             || row2 >= this->m_rowSequence->size())
         return;
 
-    uint tmp = m_rowSequence->at(row1);
+    int tmp = m_rowSequence->at(row1);
     (*m_rowSequence)[row1] = m_rowSequence->at(row2);
     (*m_rowSequence)[row2] = tmp;
 
@@ -128,13 +128,13 @@ void SequenceConverter::switchRows(const uint row1, const uint row2)
 }
 
 
-void SequenceConverter::switchColumns(const uint column1, const uint column2)
+void SequenceConverter::switchColumns(const int column1, const int column2)
 {
     if (column1 >= this->m_columnSequence->size()
             || column2 >= this->m_columnSequence->size())
         return;
 
-    uint tmp = m_columnSequence->at(column1);
+    int tmp = m_columnSequence->at(column1);
     (*m_columnSequence)[column1] = m_columnSequence->at(column2);
     (*m_columnSequence)[column2] = tmp;
 
@@ -144,10 +144,10 @@ void SequenceConverter::switchColumns(const uint column1, const uint column2)
 
 void SequenceConverter::resetSequence()
 {
-    for (uint i = 0; i < m_rowSequence->size(); i++)
+    for (int i = 0; i < m_rowSequence->size(); i++)
         (*m_rowSequence)[i] = i;
 
-    for (uint i = 0; i < m_columnSequence->size(); i++)
+    for (int i = 0; i < m_columnSequence->size(); i++)
         (*m_columnSequence)[i] = i;
 
     emit sequenceChanged();

@@ -11,8 +11,8 @@ TARGET = RelaView
 TEMPLATE = app
 
 
-release:DEFINES += DQT_NO_DEBUG
-release:DEFINES += QT_NO_DEBUG_OUTPUT
+#release:DEFINES += DQT_NO_DEBUG
+#release:DEFINES += QT_NO_DEBUG_OUTPUT
 
 
 win32{
@@ -58,7 +58,8 @@ SOURCES  += src/main.cpp \
     src/undocommands/unaryoperationcommand.cpp \
     src/view/domainchooserdialog.cpp \
     src/controller/sequenceconverter.cpp \
-    src/view/newdomaindialog.cpp
+    src/view/newdomaindialog.cpp \
+    src/view/swapdialog.cpp
 
 
 INCLUDEPATH += src/
@@ -100,7 +101,8 @@ HEADERS  += src/rvapplication.h \
     src/undocommands/unaryoperationcommand.h \
     src/view/domainchooserdialog.h \
     src/controller/sequenceconverter.h \
-    src/view/newdomaindialog.h
+    src/view/newdomaindialog.h \
+    src/view/swapdialog.h
 
 FORMS    += forms/mainwindow.ui \
     forms/propertieswidget.ui \
@@ -111,7 +113,8 @@ FORMS    += forms/mainwindow.ui \
     forms/binaryoperationdialog.ui \
     forms/errorlogwidget.ui \
     forms/domainchooserdialog.ui \
-    forms/newdomaindialog.ui
+    forms/newdomaindialog.ui \
+    forms/swapdialog.ui
 
 
 TRANSLATIONS =  recources/RelaView_en.ts \

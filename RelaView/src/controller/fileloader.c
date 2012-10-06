@@ -155,7 +155,7 @@ void rf_parser_error(int line, int position, const char *text, int argc, ...)
             char* errstr = (char*) malloc(size * sizeof(char));
 
             sprintf(errstr, "%d:%d:%s%s: %s", line, position, err, file_info->name, text);
-            printf(errstr);
+            printf("%s", errstr);
             appendError(errstr);
             free(errstr);
         }else{
@@ -166,7 +166,7 @@ void rf_parser_error(int line, int position, const char *text, int argc, ...)
             char *errstr = (char*) malloc(size *sizeof(char));
 
             sprintf(errstr, "%d:%d:%s%s", line, position, err,text);
-            printf(errstr);
+            printf("%s", errstr);
             appendError(errstr);
             free(errstr);
         }
@@ -175,7 +175,7 @@ void rf_parser_error(int line, int position, const char *text, int argc, ...)
 		for (i = 0; i < argc; i++){
 			tmp = va_arg(list, char *);
             if (tmp){
-                printf(tmp);
+                printf("%s", tmp);
                 size += strlen(tmp);
             }
 		}
@@ -258,7 +258,7 @@ void print_domain(RF_DOMAIN *domain)
 		}
 		else if (type == RF_ET_NAME)
 		{
-			printf((char *)rf_element_get_data(element));
+            printf("%s", (char *)rf_element_get_data(element));
 		}
 		else
 		{
@@ -701,7 +701,7 @@ int parseFile(int argc, const char *name)
 				free(file_info);
 				file_info = 0;
 			}
-		} while (file_info = rf_stack_pop(files));
+        } while ((file_info = rf_stack_pop(files)));
 	
 		if (!is_error)
 		{

@@ -17,7 +17,7 @@
  * @return pointer to the new string on the heap. Must be freed by user. If an error occures, 0 will be returned.
  * @see rf_string_combine
  */
-char * rf_string_copy(char *str)
+char * rf_string_copy(const char *str)
 {
 	char *new_string;
 	

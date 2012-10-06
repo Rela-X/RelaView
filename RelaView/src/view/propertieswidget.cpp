@@ -42,7 +42,7 @@ PropertiesWidget::PropertiesWidget(QWidget *parent) :
     //qDebug("PropertiesWidget Constructor");
     ui->setupUi(this);
 
-    this->init();
+    this->initPropWidget();
 }
 
 
@@ -132,7 +132,7 @@ void PropertiesWidget::refreshProperty()
 //#---------------------------------------------------------------------------#
 //#------- PRIVATE -----------------------------------------------------------#
 //#---------------------------------------------------------------------------#
-void PropertiesWidget::init()
+void PropertiesWidget::initPropWidget()
 {
     //removes the Properties headline if not on osx
     //Non osx operation systems have an titlebar over the dockWidget

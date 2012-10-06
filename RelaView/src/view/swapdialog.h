@@ -21,48 +21,32 @@
  * operations by dynamically linking to the Qt library.
  * You can obtain the Qt library from <http://qt.nokia.com>.
  */
+#ifndef SWAPDIALOG_H
+#define SWAPDIALOG_H
 
-#ifndef PROPERTIESWIDGET_H
-#define PROPERTIESWIDGET_H
+#include <QDialog>
 
-#include <QWidget>
-
-QT_FORWARD_DECLARE_CLASS(QListWidgetItem)
-class RelationData;
-class AbstractProperty;
+class MainWindow;
 
 namespace Ui {
-class PropertiesWidget;
+class SwapDialog;
 }
 
-class PropertiesWidget : public QWidget
+class SwapDialog : public QDialog
 {
     Q_OBJECT
     
 public:
-    //Constructor
-    explicit PropertiesWidget(QWidget *parent = 0);
-    ~PropertiesWidget();
-    //Methods
-    void setRelationData(RelationData* relationData);
-    int checkedCount() const;
-    QStringList checkedList() const;
+    explicit SwapDialog(QWidget *parent = 0);
+    ~SwapDialog();
+    //static
+    static void swap(MainWindow *w);
 
-private slots:
-    void refreshProperty();
-
-signals:
-    void checkStateChanged();
-
+    
 private:
-    //Methods
-    void    initPropWidget();
-    void    generateWidgetItem(AbstractProperty* s);
-    void    setWidgetItemFlags(AbstractProperty* prop, QListWidgetItem* qlwi);
-    //Data member
-    Ui::PropertiesWidget *ui;
-    QPalette palette;
-    RelationData* m_relationData;
+    void initialise();
+    //member variables
+    Ui::SwapDialog *ui;
 };
 
-#endif // PROPERTIESWIDGET_H
+#endif // SWAPDIALOG_H

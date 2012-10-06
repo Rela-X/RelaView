@@ -36,17 +36,17 @@ class SequenceConverter : public QObject
 
 public:
     //Constructor / Destructor
-    explicit SequenceConverter(const uint width, const uint height, QObject *parent = 0);
+    explicit SequenceConverter(const int width, const int height, QObject *parent = 0);
     ~SequenceConverter();
     //member functions
-    const QVector<uint>& rowSequence() const;
-    const QVector<uint>& columnSequence() const;
-    uint projectedX(const uint x) const;
-    uint projectedY(const uint y) const;
-    void setRowSequence(const QVector<uint> &v);
-    void setColumnSequence(const QVector<uint> &v);
-    void switchRows(const uint row1, const uint row2);
-    void switchColumns(const uint column2, const uint column1);
+    const QVector<int>& rowSequence() const;
+    const QVector<int>& columnSequence() const;
+    int projectedX(const int x) const;
+    int projectedY(const int y) const;
+    void setRowSequence(const QVector<int> &v);
+    void setColumnSequence(const QVector<int> &v);
+    void switchRows(const int row1, const int row2);
+    void switchColumns(const int column2, const int column1);
     void resetSequence();
 
     
@@ -56,8 +56,8 @@ signals:
 public slots:
 
 private:
-    QVector<uint> *m_rowSequence;
-    QVector<uint> *m_columnSequence;
+    QVector<int> *m_rowSequence;
+    QVector<int> *m_columnSequence;
     
 };
 
