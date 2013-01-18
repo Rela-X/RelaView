@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui opengl
+QT       += core gui printsupport #opengl
 
 
 TARGET = RelaView
@@ -43,7 +43,7 @@ SOURCES  += src/main.cpp \
     src/modifier/abstractproperty.cpp \
     src/modifier/genericproperty.cpp \
     src/undocommands/setpropertiescommand.cpp \
-    src/view/pixmapmatrix.cpp \
+    #src/view/pixmapmatrix.cpp \
     src/view/newrelationdialog.cpp \
     src/view/binaryoperationdialog.cpp \
     src/modifier/abstractoperation.cpp \
@@ -88,7 +88,7 @@ HEADERS  += src/rvapplication.h \
     src/modifier/abstractmodification.h \
     src/controller/modificationfactory.h \
     src/undocommands/setpropertiescommand.h \
-    src/view/pixmapmatrix.h \
+    #src/view/pixmapmatrix.h \
     src/view/newrelationdialog.h \
     src/view/binaryoperationdialog.h \
     src/modifier/abstractoperation.h \

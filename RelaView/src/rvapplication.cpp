@@ -36,7 +36,7 @@
 RVApplication::RVApplication(int &argc, char **argv) :
     QApplication(argc, argv)
 {
-    this->setGraphicsSystem("raster");
+    //this->setGraphicsSystem("raster");
     //Init for QSettings
     this->setOrganizationDomain("fnordlab.de");
     this->setOrganizationName("Fnordlab");

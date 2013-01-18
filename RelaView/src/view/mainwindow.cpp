@@ -36,7 +36,7 @@
 #include "relationdata.h"
 #include "propertieswidget.h"
 #include "abstractproperty.h"
-#include "pixmapmatrix.h"
+//#include "pixmapmatrix.h"
 #include "newrelationdialog.h"
 #include "abstractoperation.h"
 #include "unaryoperation.h"
@@ -64,7 +64,7 @@
 #include <QTextStream>
 #include <QPrinter>
 #include <QPrintDialog>
-#include <QGLWidget>
+//#include <QGLWidget>
 #include <QPixmap>
 #include <QImageWriter>
 #include <QMenuBar>
@@ -905,9 +905,9 @@ void MainWindow::on_actionShow_GLMatrix_triggered()
     if (!this->m_relationData)
         return;
 
-    PixmapMatrix* matrix = new PixmapMatrix();
-    matrix->setRelation(this->m_relationData);
-    matrix->show();
+    //PixmapMatrix* matrix = new PixmapMatrix();
+    //matrix->setRelation(this->m_relationData);
+    //matrix->show();
 
 }
 
@@ -1053,7 +1053,7 @@ void MainWindow::configure()
 
     //GraphicsView
     //ui->graphicsView->setCacheMode(QGraphicsView::CacheBackground);
-    ui->graphicsView->setViewport(new QGLWidget());
+    //ui->graphicsView->setViewport(new QGLWidget());
     ui->graphicsView->setViewportUpdateMode(QGraphicsView::SmartViewportUpdate); //try other update modes
 
     //connect stack
@@ -1091,8 +1091,8 @@ void MainWindow::drawRelation()
     int width = gv->viewport()->width();
     int height = gv->viewport()->height();
     QSettings settings;
-    QColor elementColor = settings.value("MainWindow/elementColor", Qt::black).value<QColor>();
-    QColor borderColor = settings.value("MainWindow/borderColor", Qt::black).value<QColor>();
+    QColor elementColor = settings.value("MainWindow/elementColor", QColor(Qt::black)).value<QColor>();
+    QColor borderColor = settings.value("MainWindow/borderColor", QColor(Qt::black)).value<QColor>();
 
 
     this->m_graphicsScene->setSceneRect(0, 0, width, height);
